@@ -38,6 +38,7 @@ public class FilmesService {
             filme.setId(filmesRepository.count() + 1);
         }
         filmesRepository.add(filme);
+        removendoFilmesIguais.process(filme);
         if (filmesRepository.getFilmesList() != null) {
             removendoFilmesIguais.process(filme);
         }
